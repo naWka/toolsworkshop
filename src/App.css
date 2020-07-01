@@ -28,6 +28,50 @@
   color: #61dafb;
 }
 
+.Button {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 400;
+  height: 42px;
+  border-radius: 4px;
+  background-color: #1890ff;
+  border-color: #1890ff;
+  color: #fff;
+  cursor: pointer;
+  padding: 4px 15px;
+  user-select: none;
+  white-space: nowrap;
+  text-align: center;
+  touch-action: manipulation;
+}
+
+.close {
+  position: absolute;
+  right: 12px;
+  top: 6px;
+  width: 20px;
+  height: 20px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 20px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

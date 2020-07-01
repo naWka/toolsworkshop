@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import styled from 'styled-components'
-import Header from "../components/header";
 import FeedBack from './feedback';
 
 const PrivacyWrapper = styled.div`
@@ -15,7 +14,6 @@ const Tos = ({}) => {
     const [isFeedBack, setIsFeedBack] = useState(false);
     return (
         <PrivacyWrapper>
-            <Header callback={() => setIsFeedBack(true)} text={'Privacy Policy'}/>
             {isFeedBack ? <FeedBack callback={() => setIsFeedBack(false)}/> : null}
             <h1>Terms of service</h1>
             <div className="content-privacy">

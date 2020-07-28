@@ -1,12 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Link} from "react-router-dom";
 import Support from './support';
 import L from '../../assets/logo.png'
 
 const Header = () => (
     <HeaderWrapper>
         <Logo src={L} alt="Logo" />
-        <Support />
+        <Link to={{ pathname: '/main', feedback: true }} style={{textDecoration: 'none'}}>
+            <Support />
+        </Link>
     </HeaderWrapper>
 )
 

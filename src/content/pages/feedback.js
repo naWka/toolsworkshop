@@ -52,7 +52,6 @@ const FeedBack = ({callback}) => {
     const [status, setStatus] = useState('');
 
     function submitForm(ev) {
-        console.log('submitForm')
         ev.preventDefault();
         const form = ev.target;
         const data = new FormData(form);

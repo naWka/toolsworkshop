@@ -25,6 +25,7 @@ const App = () => {
               <AppWrapper>
                   <Head />
                   <Route exact path='/' component={Main} />
+                  <Route path='/main' component={Main} />
                   <Route path='/feedback' component={FeedBack} />
                   <Route path='/tos' component={Tos} />
                   <Route path='/privacy' component={Privacy} />

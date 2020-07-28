@@ -1,6 +1,5 @@
-import React, {useState} from 'react';
-import styled from 'styled-components'
-import FeedBack from './feedback';
+import React from 'react';
+import styled from 'styled-components';
 
 const PrivacyWrapper = styled.div`
     display: flex;
@@ -11,10 +10,11 @@ const PrivacyWrapper = styled.div`
 `
 
 const Tos = ({}) => {
-    const [isFeedBack, setIsFeedBack] = useState(false);
+    React.useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     return (
         <PrivacyWrapper>
-            {isFeedBack ? <FeedBack callback={() => setIsFeedBack(false)}/> : null}
             <h1>Terms of service</h1>
             <div className="content-privacy">
                 <br/>

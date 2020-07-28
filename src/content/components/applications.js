@@ -46,7 +46,7 @@ const Wrapper = styled.div`
     margin-top: 48px;
     width: 100%;
 `
-const Title = styled.div`
+export const Title = styled.div`
     color: #2F2E41;
     font-size: 32px;
     font-family: 'Raleway', sans-serif;

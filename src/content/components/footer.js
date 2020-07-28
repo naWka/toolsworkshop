@@ -1,12 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Link} from "react-router-dom";
 
 const Footer = () => (
     <Wrapper>
         <Text>Copyright © 2020 Tools Workshop</Text>
         <LinksWrapper>
-            <TextHover>Terms of service</TextHover>
-            <TextHover>Privacy Policy</TextHover>
+            <Link to={{pathname: '/tos'}} params={{ feedback: true }}>
+                 <TextHover>Terms of service</TextHover>
+            </Link>
+            <Link to={{pathname: '/privacy'}} params={{ feedback: true }}>
+                 <TextHover>Privacy Policy</TextHover>
+            </Link>
         </LinksWrapper>
     </Wrapper>
 )
@@ -18,6 +23,7 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 36px;
 `
 const LinksWrapper = styled.div`
     display: flex;

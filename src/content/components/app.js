@@ -2,9 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const App = ({data}) => (
-    <Wrapper>
+    <Wrapper onClick={() => {
+        console.log('123', data.url)
+        window.location.href = data.url;
+    }}>
         <WrapperWithPadding>
-            <Img src={data.url}/>
+            <Img src={data.img}/>
             <TextWrapper>
                 <Title>{data.name}</Title>
                 <Text>{data.text}</Text>
@@ -19,6 +22,10 @@ const Wrapper = styled.div`
     box-shadow: 0 0 8px #DBE0F1;
     margin-top: 24px;
     border-radius: 12px;
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 0 8px #acafbb;
+     }
 `
 const WrapperWithPadding = styled.div`
     width: 100%;

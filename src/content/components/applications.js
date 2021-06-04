@@ -8,36 +8,50 @@ import App from './app';
 
 const apps = [
     {
-        url: Resume,
+        img: Resume,
         name: 'Resume CV Maker',
-        text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium accusantium .'
+        text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium accusantium .',
+        url: 'https://apps.apple.com/us/app/resume-cv-maker/id1508445136'
     },
     {
-        url: Split,
+        img: Split,
         name: 'Screen Split View',
-        text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium accusantium .'
+        text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium accusantium .',
+        url: 'https://apps.apple.com/us/app/screen-split-view/id1507299729'
     },
     {
-        url: Body,
+        img: Body,
         name: 'Body Temperature Tracker',
-        text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium accusantium .'
+        text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium accusantium .',
+        url: 'https://apps.apple.com/us/app/body-temperature-tracker/id1508978882'
     },
     {
-        url: Pic,
+        img: Pic,
         name: 'Pic Retouch ',
-        text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium accusantium .'
+        text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium accusantium .',
+        url: 'https://apps.apple.com/us/app/pic-retouch/id1511493335'
     },
 ]
 
 const Applications = () => (
-    <Wrapper>
-        <Title>Our applications</Title>
-        <AppsWrapper>
-            {apps.map(item => <App key={item.name} data={item}/>)}
-        </AppsWrapper>
-    </Wrapper>
+    <MaimWrapper>
+        <Wrapper>
+            <Title>Our applications</Title>
+            <AppsWrapper>
+                {apps.map(item => <App key={item.name} data={item}/>)}
+            </AppsWrapper>
+        </Wrapper>
+    </MaimWrapper>
 )
 
+const MaimWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 48px;
+    width: 100%;
+`
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -45,6 +59,7 @@ const Wrapper = styled.div`
     justify-content: center;
     margin-top: 48px;
     width: 100%;
+    max-width: 1025px;
 `
 export const Title = styled.div`
     color: #2F2E41;
@@ -58,7 +73,7 @@ const AppsWrapper = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: space-between;
 `
 
 export default Applications;

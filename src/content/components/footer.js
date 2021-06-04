@@ -4,26 +4,34 @@ import {Link} from "react-router-dom";
 
 const Footer = () => (
     <Wrapper>
-        <Text>Copyright © 2020 Tools Workshop</Text>
-        <LinksWrapper>
-            <Link to={{pathname: '/tos'}} params={{ feedback: true }}>
-                 <TextHover>Terms of service</TextHover>
-            </Link>
-            <Link to={{pathname: '/privacy'}} params={{ feedback: true }}>
-                 <TextHover>Privacy Policy</TextHover>
-            </Link>
-        </LinksWrapper>
+        <TextsWrapper style={{ width: 1025}}>
+            <Text>Copyright © 2020 Tools Workshop</Text>
+            <LinksWrapper>
+                <Link to={{pathname: '/tos'}} params={{ feedback: true }}>
+                    <TextHover>Terms of service</TextHover>
+                </Link>
+                <Link to={{pathname: '/privacy'}} params={{ feedback: true }}>
+                    <TextHover>Privacy Policy</TextHover>
+                </Link>
+            </LinksWrapper>
+        </TextsWrapper>
     </Wrapper>
 )
 
 const Wrapper = styled.div`
     height: 54px;
     background-color: #F3F6FF;
-    padding: 0px 198px 0px 218px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 36px;
+`
+const TextsWrapper = styled.div`
+    height: 54px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 36px;
+    max-width: 1025px;
 `
 const LinksWrapper = styled.div`
     display: flex;

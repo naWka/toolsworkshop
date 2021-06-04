@@ -6,8 +6,10 @@ import L from '../../assets/logo.png'
 
 const Header = () => (
     <HeaderWrapper>
-        <Logo src={L} alt="Logo" />
-        <Link to={{ pathname: '/main', feedback: true }} style={{textDecoration: 'none'}}>
+        <Link to={{ pathname: '/', feedback: false }} style={{textDecoration: 'none'}}>
+            <Logo src={L} alt="Logo" />
+        </Link>
+        <Link to={{ pathname: '/', feedback: true }} style={{textDecoration: 'none'}}>
             <Support />
         </Link>
     </HeaderWrapper>

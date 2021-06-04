@@ -3,8 +3,17 @@ import styled from 'styled-components'
 import { Title } from './applications';
 import Submit from './submit'
 
+const MainWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 48px;
+    width: 100%;
+  `
 const Wrapper = styled.div`
     display: flex;
+    max-width: 1025px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -17,7 +26,7 @@ const Forms = styled.form`
     margin-top: 48px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     `
 
 const FormWrapper = styled.form`
@@ -29,6 +38,7 @@ const LeftForms = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    max-width: 500px;
 `
 
 const InputTitle = styled.div`
@@ -41,7 +51,7 @@ const InputTitle = styled.div`
 const RightForm = styled.div`
     display: flex;
     flex-direction: column;
-    margin-left: 25px;
+    max-width: 500px;
 `
 const Input = styled.input`
     height: 44px;
@@ -59,6 +69,7 @@ const TextArea = styled.textarea`
     background-color: #FDFDFF;
     margin-top: 7px;
     padding: 14px 12px 14px 12px;
+    max-width: 476px;
     
 `
 
@@ -67,7 +78,6 @@ const ButtonWrapper = styled.div`
     display: flex;
     justify-content: flex-end;
     margin-top: 24px;
-    padding-right: 16px;
 `
 
 const FeedBack = ({callback}) => {
@@ -95,36 +105,38 @@ const FeedBack = ({callback}) => {
     }
 
     return (
-        <Wrapper>
-            <Title>Support</Title>
-            <Forms
-                onSubmit={submitForm}
-                action="https://formspree.io/xjvavlde"
-                method="POST"
-            >
-                <LeftForms>
-                    <FormWrapper>
-                        <InputTitle>Your name:</InputTitle>
-                        <Input type="name" name="name" placeholder={'Enter your name'}/>
-                    </FormWrapper>
-                    <FormWrapper style={{marginTop: 18}}>
-                        <InputTitle>Your email:</InputTitle>
-                        <Input type="email" name="email" placeholder={'Enter your email'}/>
-                    </FormWrapper>
-                </LeftForms>
-                <RightForm>
-                    <InputTitle>Message:</InputTitle>
-                    <TextArea type="text" name="message" className={'textarea'} placeholder={'Enter your message'}/>
-                </RightForm>
-            </Forms>
-            <ButtonWrapper>
-                {status === "SUCCESS" ?
-                    <p>Thanks!</p> :
-                    <Submit/>
-                }
-                {status === "ERROR" && <p>Ooops! There was an error.</p>}
-            </ButtonWrapper>
-        </Wrapper>
+        <MainWrapper>
+            <Wrapper>
+                <Title>Support</Title>
+                <Forms
+                    onSubmit={submitForm}
+                    action="https://formspree.io/xjvavlde"
+                    method="POST"
+                >
+                    <LeftForms>
+                        <FormWrapper>
+                            <InputTitle>Your name:</InputTitle>
+                            <Input type="name" name="name" placeholder={'Enter your name'}/>
+                        </FormWrapper>
+                        <FormWrapper style={{marginTop: 18}}>
+                            <InputTitle>Your email:</InputTitle>
+                            <Input type="email" name="email" placeholder={'Enter your email'}/>
+                        </FormWrapper>
+                    </LeftForms>
+                    <RightForm>
+                        <InputTitle>Message:</InputTitle>
+                        <TextArea type="text" name="message" className={'textarea'} placeholder={'Enter your message'}/>
+                    </RightForm>
+                </Forms>
+                <ButtonWrapper>
+                    {status === "SUCCESS" ?
+                        <p>Thanks!</p> :
+                        <Submit/>
+                    }
+                    {status === "ERROR" && <p>Ooops! There was an error.</p>}
+                </ButtonWrapper>
+            </Wrapper>
+        </MainWrapper>
     );
 
 }

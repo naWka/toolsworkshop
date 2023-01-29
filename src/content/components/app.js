@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const App = ({data}) => (
     <Wrapper onClick={() => {
-        console.log('123', data.url)
         window.location.href = data.url;
     }}>
         <WrapperWithPadding>
@@ -40,6 +39,7 @@ const TextWrapper = styled.div`
     flex-direction: column;
     height: 112px;
     margin-left: 18px;
+    max-width: 300px;
 `
 
 const Title = styled.div`

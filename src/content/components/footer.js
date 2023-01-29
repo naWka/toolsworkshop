@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 const Footer = () => (
     <Wrapper>
         <TextsWrapper style={{ width: 1025}}>
-            <Text>Copyright © 2020 Tools Workshop</Text>
+            <Text>Copyright © 2023 Tools Workshop</Text>
             <LinksWrapper>
                 <Link to={{pathname: '/tos'}} params={{ feedback: true }}>
                     <TextHover>Terms of service</TextHover>

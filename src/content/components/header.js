@@ -9,7 +9,7 @@ const Header = () => (
         <Link to={{ pathname: '/', feedback: false }} style={{textDecoration: 'none'}}>
             <Logo src={L} alt="Logo" />
         </Link>
-        <Link to={{ pathname: '/', feedback: true }} style={{textDecoration: 'none'}}>
+        <Link to={{ pathname: '/', feedback: true}} style={{textDecoration: 'none'}}>
             <Support />
         </Link>
     </HeaderWrapper>

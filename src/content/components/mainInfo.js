@@ -6,8 +6,9 @@ const MainInfo = () => (
     <Wrapper>
         <TextWrapper>
             <div style={{position: 'absolute', maxWidth: 498}}>
-                <Title>Lorem ipsum dolor sit amet ipsum.</Title>
-                <div style={{marginTop: 22}}>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</div>
+                <Title>Useful tools
+for your everyday life</Title>
+                <div style={{marginTop: 22}}>Simple applications are always at your fingertips: from surfing the web and chatting with friends to taking care of your health and your family - we cover truly the necessary needs.</div>
             </div>
         </TextWrapper>
         <Image src={Img} />

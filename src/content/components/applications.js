@@ -1,35 +1,38 @@
 import React from 'react';
 import styled from 'styled-components';
-import Resume from '../../assets/resume.png';
+
+import o2 from '../../assets/o2.png';
 import Body from '../../assets/body.png';
-import Pic from '../../assets/pic.png';
+import prec from '../../assets/prec.png';
 import Split from '../../assets/spleet.png';
 import App from './app';
 
 const apps = [
     {
-        img: Resume,
-        name: 'Resume CV Maker',
-        text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium accusantium .',
-        url: 'https://apps.apple.com/us/app/resume-cv-maker/id1508445136'
-    },
-    {
         img: Split,
         name: 'Screen Split View',
-        text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium accusantium .',
+        text: 'Divide the screen of your device into 2 windows to do several tasks at same time: watch, chat, work, compare, search etc.',
         url: 'https://apps.apple.com/us/app/screen-split-view/id1507299729'
     },
     {
         img: Body,
-        name: 'Body Temperature Tracker',
-        text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium accusantium .',
+        name: 'Body Temperature',
+        text: 'Temp logbook for all your family: monitor temperature data, taken meds and health condition ',
         url: 'https://apps.apple.com/us/app/body-temperature-tracker/id1508978882'
     },
     {
-        img: Pic,
-        name: 'Pic Retouch ',
-        text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium accusantium .',
-        url: 'https://apps.apple.com/us/app/pic-retouch/id1511493335'
+        img: o2,
+        name: 'Blood Oxygen Level',
+        text: 'The most important tracker in our life: log your oxygen level, measure heart rate, sync all data Apple Health. Ready report for your doctor.',
+        url: 'https://apps.apple.com/us/app/blood-oxygen-app-level-log/id1567177708'
+    },
+
+
+    {
+        img: prec,
+        name: 'Blood Pressure ',
+        text: 'Pocket cardio diary for everyday care of your heart: easy input, pdf report and pulse measurement with device camera.',
+        url: 'https://apps.apple.com/us/app/blood-pressure-app-log-diary/id1525183703'
     },
 ]
 

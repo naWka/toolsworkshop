@@ -118,7 +118,6 @@ const FeedBack = ({callback}) => {
 
     function submitForm(ev) {
         ev.preventDefault();
-        console.log('submitForm')
         const form = ev.target;
         const data = new FormData(form);
         const xhr = new XMLHttpRequest();

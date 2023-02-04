@@ -21,7 +21,8 @@ const Wrapper = styled.div`
   `
 
 const Forms = styled.form`
-    width: 100%;
+
+    width: '100%';
     margin-top: 48px;
     display: flex;
     flex-direction: row;
@@ -29,16 +30,12 @@ const Forms = styled.form`
     flex-wrap: wrap;
     `
 
-const FormWrapper = styled.form`
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-    `
 const LeftForms = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     max-width: 450px;
+    width: 450px;
     margin-left: 16px;
 `
 
@@ -81,8 +78,6 @@ const ButtonWrapper = styled.div`
     justify-content: flex-end;
     margin-top: 24px;
 `
-
-
 const SubmitBtn = styled.button`
     height: 38px;
     width: 157px;
@@ -93,7 +88,6 @@ const SubmitBtn = styled.button`
     justify-content: center;
     border-width: 0px;
 `
-
 const Text = styled.div`
     color: #FFF;
     font-size: 14px;
@@ -103,18 +97,18 @@ const Text = styled.div`
 
 const FeedBack = ({callback}) => {
     const [status, setStatus] = useState('');
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: ''
-      });
+    // const [formData, setFormData] = useState({
+    //     name: '',
+    //     email: '',
+    //     message: ''
+    //   });
     
-      const handleChange = event => {
-        setFormData({
-          ...formData,
-          [event.target.name]: event.target.value
-        });
-      };
+    //   const handleChange = event => {
+    //     setFormData({
+    //       ...formData,
+    //       [event.target.name]: event.target.value
+    //     });
+    //   };
 
     function submitForm(ev) {
         ev.preventDefault();
@@ -124,7 +118,6 @@ const FeedBack = ({callback}) => {
         xhr.open(form.method, form.action);
         xhr.setRequestHeader("Accept", "application/json");
         xhr.onreadystatechange = () => {
-            console.log('xhr.status', xhr.status)
             if (xhr.readyState !== XMLHttpRequest.DONE) return;
             if (xhr.status === 200) {
                 form.reset();
@@ -150,27 +143,31 @@ const FeedBack = ({callback}) => {
                 <Forms
                     noValidate={false}
                     onSubmit={submitForm}
-                    action="https://formspree.io/xjvavlde"
+                    action="https://formspree.io/f/xjvavlde"
                     method="POST"
                 >
                     <LeftForms>
-                        <FormWrapper>
+
+                            <InputTitle>Name:</InputTitle>
+                            <Input type="name" name="name" placeholder={'Enter your name'}/>
+
+
+                        <InputTitle>Email:</InputTitle>
+                    <Input type="email" name="email" placeholder={'Enter your email'}/>
+
+
+                        {/* <FormWrapper>
                             <InputTitle>Your name:</InputTitle>
-                            <Input type="name"     name="name"
-          value={formData.name}
-          onChange={handleChange}  placeholder={'Enter your name'}/>
+                            <Input id="name" type="name" name="name" placeholder={'Enter your name'}/>
                         </FormWrapper>
                         <FormWrapper style={{marginTop: 18}}>
                             <InputTitle>Your email:</InputTitle>
-                            <Input type="email"           name="email"
-          value={formData.email}
-          onChange={handleChange} placeholder={'Enter your email'}/>
-                        </FormWrapper>
+                            <Input id="email" type="email" name="email" placeholder={'Enter your email'}/>
+                        </FormWrapper> */}
                     </LeftForms>
                     <RightForm>
                         <InputTitle>Message:</InputTitle>
-                        <TextArea value={formData.message} name="message"
-          onChange={handleChange} className={'textarea'} placeholder={'Enter your message'}/>
+                        <TextArea id="message"  name="message" className={'textarea'} placeholder={'Enter your message'}/>
                     </RightForm>
                     <ButtonWrapper>
                     {status === "SUCCESS" ?

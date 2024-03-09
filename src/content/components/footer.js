@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 const Footer = () => (
     <Wrapper>
-        <TextsWrapper style={{ width: 1025}}>
+        <TextsWrapper style={{ maxWidth: 1025}}>
             <Text>Copyright © 2024 Tools Workshop</Text>
             <LinksWrapper>
                 <Link to={{pathname: '/tos'}} params={{ feedback: true }}>
@@ -15,11 +15,11 @@ const Footer = () => (
                 </Link>
             </LinksWrapper>
         </TextsWrapper>
-        <div style={{ padding: '20px', width: '100%', maxWidth: '1025px' }}>
-  <Text>Индивидуальный предприниматель Шестаков Артем Олегович</Text>
+        <FooterContainer>
+  <Text>Shestakov Artem Olegovich, IP</Text>
   <Text>ИНН: 421413959394</Text>
   <Text>ОГРНИП: 321547600007953</Text>
-</div>
+</FooterContainer>
     </Wrapper>
 )
 
@@ -38,12 +38,18 @@ const TextsWrapper = styled.div`
     align-items: center;
     justify-content: space-between;
     max-width: 1025px;
+    width: 100%;
+    @media (max-width: 768px) {
+        flex-direction: column;
+        padding: 20px 16px; 
+      }
 `
 const LinksWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 226px;
+
 `
 const Text = styled.div`
     font-size: 14px;
@@ -61,5 +67,18 @@ const TextHover = styled.div`
         cursor: pointer;
      }
 `
+
+const FooterContainer = styled.div`
+  padding: 20px;
+  max-width: 1025px;
+  margin: auto; 
+  width: 100%;
+
+  // Медиа-запрос для мобильных устройств
+  @media (max-width: 768px) {
+    text-align: center;
+    padding: 20px 16px; 
+  }
+`;
 
 export default Footer;

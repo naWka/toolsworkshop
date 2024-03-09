@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState,useEffect } from 'react';
 import styled from 'styled-components';
 
 import o2 from '../../assets/o2.png';
@@ -36,7 +36,36 @@ const apps = [
     },
 ]
 
-const Applications = () => (
+const Applications = () => {
+    const [width, setWindowWidth] = useState(0)
+    useEffect(() => { 
+ 
+      updateDimensions();
+ 
+      window.addEventListener('resize', updateDimensions);
+      return () => 
+        window.removeEventListener('resize',updateDimensions);
+    }, [])
+    
+    const updateDimensions = () => {
+        const width = window.innerWidth
+        setWindowWidth(width)
+    }
+    
+    if (width < 995) {
+        return (
+            <MaimWrapperSmall>
+            <Wrapper >
+                <Title>Our applications</Title>
+                <AppsWrapper style={{justifyContent: 'center'}}>
+                    {apps.map(item => <App key={item.name} data={item}/>)}
+                </AppsWrapper>
+            </Wrapper>
+        </MaimWrapperSmall>
+        )
+    }
+
+    return (
     <MaimWrapper>
         <Wrapper>
             <Title>Our applications</Title>
@@ -45,7 +74,7 @@ const Applications = () => (
             </AppsWrapper>
         </Wrapper>
     </MaimWrapper>
-)
+)}
 
 const MaimWrapper = styled.div`
     display: flex;
@@ -53,6 +82,14 @@ const MaimWrapper = styled.div`
     align-items: center;
     justify-content: center;
     margin-top: 48px;
+    width: 100%;
+`
+const MaimWrapperSmall = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
     width: 100%;
 `
 const Wrapper = styled.div`

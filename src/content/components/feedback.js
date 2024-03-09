@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import styled from 'styled-components'
 import { Title } from './applications';
 
@@ -95,20 +95,23 @@ const Text = styled.div`
     font-weight: 400;
 `
 
-const FeedBack = ({callback}) => {
-    const [status, setStatus] = useState('');
-    // const [formData, setFormData] = useState({
-    //     name: '',
-    //     email: '',
-    //     message: ''
-    //   });
+const FeedBack = ({ callback }) => {
+    const [screenWidth, setWindowWidth] = useState(0)
+    useEffect(() => { 
+ 
+      updateDimensions();
+ 
+      window.addEventListener('resize', updateDimensions);
+      return () => 
+        window.removeEventListener('resize',updateDimensions);
+    }, [])
     
-    //   const handleChange = event => {
-    //     setFormData({
-    //       ...formData,
-    //       [event.target.name]: event.target.value
-    //     });
-    //   };
+    const updateDimensions = () => {
+        const width = window.innerWidth
+        setWindowWidth(width)
+    }
+
+    const [status, setStatus] = useState('');
 
     function submitForm(ev) {
         ev.preventDefault();
@@ -131,9 +134,9 @@ const FeedBack = ({callback}) => {
     }
 
 
-
+    const isSmall = screenWidth < 995
     return (
-        <MainWrapper>
+        <MainWrapper style={isSmall ? {marginTop: 0} : {}}>
 
 
             
@@ -145,6 +148,7 @@ const FeedBack = ({callback}) => {
                     onSubmit={submitForm}
                     action="https://formspree.io/f/xjvavlde"
                     method="POST"
+                    style={isSmall ? {marginTop: 0, width: 320} : {}}
                 >
                     <LeftForms>
 
@@ -152,22 +156,15 @@ const FeedBack = ({callback}) => {
                             <Input type="name" name="name" placeholder={'Enter your name'}/>
 
 
-                        <InputTitle>Email:</InputTitle>
+                        <InputTitle   style={isSmall ? {marginTop: 8, width: 320} : {}}>Email:</InputTitle>
                     <Input type="email" name="email" placeholder={'Enter your email'}/>
 
 
-                        {/* <FormWrapper>
-                            <InputTitle>Your name:</InputTitle>
-                            <Input id="name" type="name" name="name" placeholder={'Enter your name'}/>
-                        </FormWrapper>
-                        <FormWrapper style={{marginTop: 18}}>
-                            <InputTitle>Your email:</InputTitle>
-                            <Input id="email" type="email" name="email" placeholder={'Enter your email'}/>
-                        </FormWrapper> */}
+       
                     </LeftForms>
                     <RightForm>
-                        <InputTitle>Message:</InputTitle>
-                        <TextArea id="message"  name="message" className={'textarea'} placeholder={'Enter your message'}/>
+                        <InputTitle style={isSmall ? {marginTop: 8, width: 320} : {}}>Message:</InputTitle>
+                        <TextArea style={isSmall ? { width: 320} : {}} id="message"  name="message" className={'textarea'} placeholder={'Enter your message'}/>
                     </RightForm>
                     <ButtonWrapper>
                     {status === "SUCCESS" ?
@@ -175,7 +172,6 @@ const FeedBack = ({callback}) => {
                         (<SubmitBtn type={'submit'} >
                             <Text>Submit</Text>
                         </SubmitBtn>)
-                        // <input type="submit" value="Submit" />
                     }
                     {status === "ERROR" && <p>Ooops! There was an error.</p>}
                 </ButtonWrapper>

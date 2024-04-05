@@ -21,17 +21,7 @@ const Privacy = ({}) => {
                 <br/>
                 <br/>
 
-                Privacy Policy (hereinafter referred to as the "Policy") applies to information that either allows or does not
-                allow the user to be identified (including personal data) in the applicable law (hereinafter referred to as
-                "Personal Information"), which “Yana Shestakova” (hereinafter referred to as "Our Team") can receive about
-                you when you use any programs and / or websites of Our Team (hereinafter referred to as the "Products"), as well
-                as when Our Team performs the agreements and contracts signed by you, needed to use Our Products.
-                You provide our Team with your Personal Data and give a full and unconditional consent for its processing,
-                including cross-border transfer, solely under the following privacy policy.
-                We can also transfer and receive your Personal Data from our partners (hereinafter referred to as "Partners"),
-                programs, websites, products or services which are used (for example, from our advertisers). The transfer of
-                Personal Data is possible only in cases established by the applicable law, and is carried out by virtue of the
-                contracts between us and each of the Partners.
+                Privacy Policy (hereinafter referred to as the "Policy") applies to information that either allows or does not allow the user to be identified (including personal data) in the applicable law (hereinafter referred to as "Personal Information"), which “Yana Shestakova” and "Shestakov Artem Olegovich, IP"(hereinafter referred to as "Our Team") can receive about you when you use any programs and / or websites of Our Team (hereinafter referred to as the "Products"), as well as when Our Team performs the agreements and contracts signed by you, needed to use Our Products. You provide our Team with your Personal Data and give a full and unconditional consent for its processing, including cross-border transfer, solely under the following privacy policy. We can also transfer and receive your Personal Data from our partners (hereinafter referred to as "Partners"), programs, websites, products or services which are used (for example, from our advertisers). The transfer of Personal Data is possible only in cases established by the applicable law, and is carried out by virtue of the contracts between us and each of the Partners.
                 <br />
                 <br />
 
